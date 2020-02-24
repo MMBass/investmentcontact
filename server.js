@@ -9,7 +9,7 @@ const { JSDOM } = jsdom;
 const PORT = process.env.PORT||3000;
 
 app.use(cors())
-app.use(express.static('../'));
+app.use(express.static('client'));
 app.get('/thirtyFive',(req,res)=>{
 
     fetch('https://www.bizportal.co.il/capitalmarket/indices/performance/33343333')
