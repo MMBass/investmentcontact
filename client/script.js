@@ -7,21 +7,21 @@ function callApi(userVal) {
     let resList = {};
     if (typeof userVal === 'number' && userVal !== 0) {
 
-        fetch('http://localhost:3000/thirtyFive')
+        fetch('thirtyFive')
             .then((res) => {
                 return res = res.text();
             })
             .then((thirtyFive) => {
                 resList.thirtyFive = parseFloat(thirtyFive);
 
-                fetch('http://localhost:3000/hundred')
+                fetch('hundred')
                     .then((res) => {
                         return res = res.text();
                     })
                     .then((hundred) => {
                         resList.hundred = parseFloat(hundred);
 
-                        fetch('http://localhost:3000/allShare')
+                        fetch('allShare')
                             .then((res) => {
                                 return res = res.text();
                             })
