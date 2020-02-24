@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    border: 1px solid black;
+}
+
+div{
+    padding: 4px;
+    border: 1px solid black;
+}
+
+#resultsArea{
+  display: none;
+}
+
+.resultDiv{
+    width: 70%;
+}
+
+#contactForm input{
+  margin: 2px;
+  display: inline-block;
+}

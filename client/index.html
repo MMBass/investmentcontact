@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>welcome</h1>
+
+    <div id="calculateArea">
+        <p>Enter amount:</p>
+        <input type="number" id="amountInput">
+        <button id="calcBtn">clac</button>
+
+        <div id="resultsArea">
+            <h4>35:</h4>
+            <div class="resultDiv">
+                <br>
+            </div>
+            <h4>100:</h4>
+            <div class="resultDiv">
+                <br>
+            </div>
+            <h4>rest:</h4>
+            <div class="resultDiv">
+            </div>
+        </div>
+    </div>
+
+    <form id="contactForm">
+        <h3>want to hear more? Leave deatels:</h3>
+
+        <input type="email" placeholder="email: required" required>
+
+        <input type="text" placeholder="phone: optional">
+
+        <input type="text" placeholder="name: required" required>
+        <input type="text" placeholder="comment...">
+
+        <button type="submit">SEND</button>
+    </form>
+
+
+
+    <script src="script.js"></script>
+
+    <!-- FIREBASE SCRIPTS: -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+
+    <script src="firebase.js"></script>
+</body>
+
+</html>
