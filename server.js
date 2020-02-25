@@ -41,6 +41,7 @@ app.get('/allShare',(req,res)=>{
          let allShare = resDom.window.document.querySelectorAll('.statistics-container ul .num')[4].textContent;
 
          res.send(allShare);
+         console.log(allShare)
     })
 });
 

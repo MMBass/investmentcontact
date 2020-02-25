@@ -1,54 +1,61 @@
+let resList = {};
+
+function init() {
+    callApi();
+}
+init();
+
+function startCalc() {
+    userVal = document.getElementById('amountInput').value;
+    if (resList.allShare) {
+        calcResults(Number(userVal), resList);
+    } else {
+        setTimeout(() => {
+            startCalc();
+            console.log('start again')
+        }, 500)
+    }
+}
+
 document.getElementById('calcBtn').addEventListener('click', () => {
-    value = document.getElementById('amountInput').value;
-    callApi(Number(value));
+    startCalc();
 });
 
-function callApi(userVal) {
-    let resList = {};
-    if (typeof userVal === 'number' && userVal !== 0) {
+function callApi() {
+    fetch('thirtyFive')
+        .then((res) => {
+            return res = res.text();
+        })
+        .then((thirtyFive) => {
+            resList.thirtyFive = parseFloat(thirtyFive);
 
-        fetch('thirtyFive')
-            .then((res) => {
-                return res = res.text();
-            })
-            .then((thirtyFive) => {
-                resList.thirtyFive = parseFloat(thirtyFive);
+            fetch('hundred')
+                .then((res) => {
+                    return res = res.text();
+                })
+                .then((hundred) => {
+                    resList.hundred = parseFloat(hundred);
 
-                fetch('hundred')
-                    .then((res) => {
-                        return res = res.text();
-                    })
-                    .then((hundred) => {
-                        resList.hundred = parseFloat(hundred);
-
-                        fetch('allShare')
-                            .then((res) => {
-                                return res = res.text();
-                            })
-                            .then((allShare) => {
-                                resList.allShare = parseFloat(allShare);
-                              
-                                calcResults(userVal, resList);
-                            })
-                    })
-            })
-        // calcResults(userVal, {
-        //     thirtyFive: [20, 40, 50],
-        //     hundred: [10, 50, 80],
-        //     rest: [20, 30, 40]
-        // });
-    }
-
+                    fetch('allShare')
+                        .then((res) => {
+                            return res = res.text();
+                        })
+                        .then((allShare) => {
+                            resList.allShare = parseFloat(allShare);
+                            console.log(resList)
+                        })
+                })
+        })
 }
 
 function calcResults(userVal, fromApi) {
-
     let aResult = userVal + ((userVal / 100) * fromApi.thirtyFive);
     let bResult = userVal + ((userVal / 100) * fromApi.hundred);
     let cResult = userVal + ((userVal / 100) * fromApi.allShare);
 
     results = [aResult, bResult, cResult]
     displayRes(results);
+
 }
 
 function displayRes(results) {
