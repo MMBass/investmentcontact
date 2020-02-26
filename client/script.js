@@ -62,7 +62,7 @@ function displayRes(results) {
     document.querySelector('#resultsArea').style.display = 'block';
     let divs = document.querySelectorAll('.resultDiv');
     for (i = 0; i < divs.length; i++) {
-        divs[i].innerHTML = `<p>12 month: ${(results[i]).toFixed(2)}</p>`
+        divs[i].innerHTML = `<h4 dir="rtl" class="text-center">שווי צפוי לאחר שנה: ${(results[i]).toFixed(2)} אלף ש״ח</h4>`
     }
     // <br> <p>3 month: ${(results[i] * 3).toFixed(2)}</p><br> <p> 6 month: ${(results[i] * 6).toFixed(2)}</p>
 }
