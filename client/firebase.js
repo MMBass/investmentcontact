@@ -34,7 +34,7 @@ function send(e,data) {
         .then(function (docRef) {
             console.log("Document written with ID: ", docRef.id);
             if(docRef.id){
-                document.querySelector('body').innerHTML = "<div class='container text - center'><img src = 'eva.png'><div class='headermessage'><h3>פרטיך נשלחו בהצלחה</h3><h3>אחד מיועצינו יצור איתך קשר בהקדם</h3></div></div >"
+                document.querySelector('body').innerHTML = "<div class='container text - center'><img src = 'eva.png'><div class='headermessage'><h4>פרטיך נשלחו בהצלחה</h4><h4>אחד מיועצינו יצור איתך קשר בהקדם</h4></div></div >"
             }
         })
         .catch(function (error) {
