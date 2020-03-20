@@ -27,6 +27,7 @@ function callApi() {
             return res = res.text();
         })
         .then((thirtyFive) => {
+            console.log("first call: " +thirtyFive)
             resList.thirtyFive = parseFloat(thirtyFive);
 
             fetch('hundred')
