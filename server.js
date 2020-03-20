@@ -21,7 +21,7 @@ app.get('/thirtyFive',(req,res)=>{
          let thirtyFive = resDom.window.document.querySelectorAll('.statistics-container ul .num')[4].textContent;
 
          res.send(thirtyFive);
-    }).catch(function(){
+    }).catch(function(error){
         console.log(error);
         });
 })
