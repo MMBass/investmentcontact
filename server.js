@@ -18,7 +18,7 @@ app.get('/thirtyFive',(req,res)=>{
     .then(body => {
          const resDom = new JSDOM(body);
          console.log(resDom);
-        console.log(resDom.window.document.querySelectorAll('h1')[0].textContent;);
+       
          let thirtyFive = resDom.window.document.querySelectorAll('.statistics-container ul .num')[4].textContent;
 
          res.send(thirtyFive);
