@@ -10,8 +10,22 @@ const PORT = process.env.PORT||3000;
 
 app.use(cors())
 app.use(express.static('client'));
-app.get('/thirtyFive',(req,res)=>{
 
+function exampleFetch(){
+    fetch('https://crownheights.info/contact-us')
+    .then(res => res.text())
+    .then(body => {
+         const resDom = new JSDOM(body);
+         console.log(resDom);
+         let t = resDom.window.document.querySelectorAll('h1')[0].textContent;
+console.log(t)
+   
+    });
+    
+ }
+
+app.get('/thirtyFive',(req,res)=>{
+    exampleFetch();
     fetch('https://www.bizportal.co.il/capitalmarket/indices/performance/33343333')
     .then(res => res.text())
     .then(body => {
