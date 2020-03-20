@@ -12,12 +12,13 @@ app.use(cors())
 app.use(express.static('client'));
 
 app.get('/thirtyFive',(req,res)=>{
-    fetch('https://www.bizportal.co.il/capitalmarket/indices/performance/33343333')
+    fetch('https://www.tase.co.il/he/market_data/index/142/major_data')
            
     .then(res => res.text())
     .then(body => {
          const resDom = new JSDOM(body);
          console.log(resDom);
+        console.log(resDom.window.document.querySelectorAll('h1')[0].textContent;);
          let thirtyFive = resDom.window.document.querySelectorAll('.statistics-container ul .num')[4].textContent;
 
          res.send(thirtyFive);
