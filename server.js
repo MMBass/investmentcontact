@@ -23,7 +23,7 @@ app.get('/thirtyFive',(req,res)=>{
          res.send(thirtyFive);
     }).catch(function(){
         console.log(error);
-        }
+        });
 })
 
 app.get('/hundred',(req,res)=>{
