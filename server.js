@@ -23,7 +23,7 @@ app.get('/thirtyFive',(req,res)=>{
 
          res.send(thirtyFive);
     }).catch(function(error){
-        console.log(error);
+        
         });
 })
 
