@@ -12,6 +12,16 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 app.use(cors())
 app.use(express.static('client'));
 
+let counter = 0;
+app.use(()=>{
+    if(counter == 0){
+    counter = 1;
+    setInterval(function(){
+        counter++;
+    },300*300);
+};
+});
+
 app.get('/thirtyFive',(req,res)=>{
     
     fetch('https://www.bizportal.co.il/capitalmarket/indices/generalview/33343333')
