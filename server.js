@@ -16,7 +16,9 @@ let counter = 0;
 app.use(()=>{
     if(counter == 0){
     counter = 1;
+        console.log("counter" +counter);
     setInterval(function(){
+        console.log("counter" +counter);
         counter++;
     },300*300);
 };
